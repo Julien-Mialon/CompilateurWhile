@@ -1,0 +1,14 @@
+function bouh(a : int) : int is
+begin
+	return a * 42
+end
+
+program
+
+begin
+	int i, j;
+	
+	i := 42 ;
+	j := 51 ;
+	j := bouh(i)
+end

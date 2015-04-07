@@ -1,0 +1,89 @@
+function fibonacci(x : int) : int is
+	if x = 0 then
+		return 0
+	else
+		if x = 1 then
+			return 1
+		else
+			begin
+				int t1, t2;
+				t1 := fibonacci(x-1);
+				t2 := fibonacci(x-2);
+				return t1 + t2
+			end
+
+function modulo(x : int, y : int) : int is
+begin
+	while x > y do
+		x := x - y;
+	if x = 1 then
+		return x
+	else
+		return x + 42
+end
+
+function hello(x :int, y : int, z : int, w : int) : int is
+	return x + y + z + w
+
+function bouh() : int is
+	return 42
+
+procedure syracuse(x : int) is
+begin
+	int value;
+
+	value := x;
+
+	while value <> 1 do
+		begin
+			int v;
+			v := modulo(value, 2);
+			if v = 0 then
+				value := value / 2
+			else
+				value := 3 * value + 1
+		end;
+	return
+end
+
+procedure callOthers() is
+begin
+	int a;
+
+	a := fibonacci(1);
+	syracuse(a)
+end
+
+procedure useless(x : int, y : int) is
+begin
+	int val;
+
+	return;
+	if(true && false) then
+		val := 1 + 2 + 3
+	else
+		return
+end
+	
+program
+
+begin
+	int x, y;
+
+	useless(1, 2);
+
+	x := 42;
+	y := x;
+	x := x + 2;
+	y := x;
+	y := 51;
+	x := x + y;
+
+
+	x := 1;
+	while x > 0 do
+		x := x - 1;
+	callOthers();
+	useless(4, 3);
+	hello(1, 2, 3, 4)
+end

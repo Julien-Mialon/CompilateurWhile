@@ -1,0 +1,8 @@
+program
+
+begin
+	int i, j;
+	
+	i := 42 ;
+	j := 51
+end

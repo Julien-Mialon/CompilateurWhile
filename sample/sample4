@@ -1,0 +1,77 @@
+function fibonacci(x : int) : int is
+	if x = 0 then
+		return 0
+	else 
+		if x = 1 then
+			return 1
+		else
+			begin
+				int t1, t2;
+				t1 := fibonacci(x-1);
+				t2 := fibonacci(x-2);
+				return t1 + t2
+			end
+
+function modulo(x : int, y : int) : int is
+begin
+	while x > y do
+		x := x - y;
+	return x
+end
+
+procedure syracuse(x : int) is
+begin
+	int value;
+
+	value := x;
+
+	while value <> 1 do
+		begin
+			int v;
+			v := modulo(value, 2);
+			if v = 0 then
+				value := value / 2
+			else
+				value := 3 * value + 1
+		end
+end
+
+function bouhDecimal(a : decimal, b : decimal) : decimal is
+begin
+	decimal c, d;
+
+	c := a;
+	d := b;
+
+	c := a / (c+d);
+	return c / d
+end
+
+procedure callOthers() is
+begin
+	decimal b;
+	int a;
+
+	a := fibonacci(42);
+	syracuse(a);
+	b := bouhDecimal(42.42, 51.51);
+	testArray(51)
+end
+
+procedure testArray(size : int) is
+begin
+	array(int) arr;
+	int i;
+
+	arr = new int[size];
+	i := 0;
+
+	size := 10;
+
+	while i < size do
+		arr[i] := i
+end
+
+program
+
+callOthers()
